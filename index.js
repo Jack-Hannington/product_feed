@@ -1,7 +1,7 @@
 const express = require('express')
 require('dotenv').config() 
 const app = express()
-const port = 3000 || process.env.PORT; 
+const port = 3000 || process.env.PORT;
 
 
 app.get('/downloadproductfeed', async (req, res) => {
@@ -17,7 +17,7 @@ app.get('/downloadproductfeed', async (req, res) => {
   
       const data = await response.text();
       const lines = data.split('\n');
-  
+     
       // Check specific product ID
       lines.forEach(line => {
         const fields = line.split('\t');
@@ -33,7 +33,6 @@ app.get('/downloadproductfeed', async (req, res) => {
     }
   });
   
-
   app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
