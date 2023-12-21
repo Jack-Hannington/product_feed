@@ -20,8 +20,8 @@ app.get('/downloadproductfeed', async (req, res) => {
   
       // Check specific product ID
       lines.forEach(line => {
-        const fields = line.split('\t'); // Assuming tab-separated values
-        if (fields[0] === '33242') { // Assuming the ID is in the first field
+        const fields = line.split('\t');
+        if (fields[0] === '33242') {
           console.log('Line with ID 33242:', line);
         }
       });
